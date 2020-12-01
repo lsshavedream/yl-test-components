@@ -1,0 +1,19 @@
+.wrapTable {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .tableMenu {
+    position: fixed;
+    width: 100px;
+    height: 180px;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 2px #ededed;
+    z-index: 10000;
+    background-color: #ffffff;
+  }
+  :global {
+    .activeTr {
+      background-color: #f6f6f6;
+    }
+  }
+}

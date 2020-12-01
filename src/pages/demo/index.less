@@ -1,0 +1,39 @@
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.buttonContent {
+  padding: 16px;
+}
+
+.main {
+  width: 100%;
+  height: calc(100% - 98px);
+  .contentLeft {
+    width: 380px;
+    overflow: auto;
+    border-right: 1px solid #ededed;
+  }
+  .contentRight {
+    flex: 1;
+    .flex();
+    .flexColumn();
+    .contentRightTop {
+      flex: 1;
+      overflow: hidden;
+    }
+    .contentRightBottom {
+      border-top: 1px solid #ededed;
+      padding: 16px;
+      height: 300px;
+    }
+  }
+}
