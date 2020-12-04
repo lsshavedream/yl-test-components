@@ -1,0 +1,32 @@
+.cyIconSvg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.cyIconSvgContent {
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently not supported by any browser */
+    line-height: 1;
+    :global {
+        .cyIcon {
+            vertical-align: top;
+        }
+    }
+}
+
+:global {
+    .disabled {
+        cursor: not-allowed;
+        .cyIcon {
+            color: #969696;
+        }
+    }
+}
+

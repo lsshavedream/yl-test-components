@@ -1,5 +1,7 @@
 import {useEffect} from "react"
 
+import {HandleTableDataItem} from "@/pages/table-component/index"
+ 
 export function useOnClickOutside(ref: any, handler: (event: any) => void) {
   useEffect(
     () => {
@@ -39,7 +41,7 @@ export function useRightClick(ref: any, handler: (event: any) => void) {
   );
 }
 
-export const flatten = (treeData: any, childName: string = "children", parentId: string = "", parentIdName: string = "uid") => {
+export const flatten = (treeData: any, childName: string = "children", parentId: string = "", parentIdName: string = "uid") :HandleTableDataItem[] => {
   if(treeData && treeData.length) {
     return treeData.reduce((arr: object[], item: object) => {
       return arr.concat([{...item,parentId}], flatten(item[childName],childName,item[parentIdName],parentIdName))
@@ -48,13 +50,13 @@ export const flatten = (treeData: any, childName: string = "children", parentId:
   return []
 }
 
-// export const toTreeData = (list: object[]) => {
-//   if(!list || !list.length) return []
-//   const data = JSON.parse(JSON.stringify(list));
-//
-// }
+interface ToTreeDataOptions {
+  keyField?: string
+  childField?: string
+  parentField?: string
+}
 
-export const toTreeData = (data: object[], options = {}) => {
+export const toTreeData = (data: object[], options:ToTreeDataOptions = {}):HandleTableDataItem[] => {
 
   const list = JSON.parse(JSON.stringify(data));
 
